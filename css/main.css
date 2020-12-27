@@ -1,0 +1,44 @@
+* {
+  margin: none;
+  padding: none;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  background-color: #e5eff5;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [margin-start] minmax(5rem, 10vw) [center-start] ([col-start] minmax(15rem, max-content) [col-end])[2] [center-end] minmax(5rem, 10vw) [margin-end];
+      grid-template-columns: [margin-start] minmax(5rem, 10vw) [center-start] repeat(2, [col-start] minmax(15rem, -webkit-max-content) [col-end]) [center-end] minmax(5rem, 10vw) [margin-end];
+      grid-template-columns: [margin-start] minmax(5rem, 10vw) [center-start] repeat(2, [col-start] minmax(15rem, max-content) [col-end]) [center-end] minmax(5rem, 10vw) [margin-end];
+}
+
+.attribution {
+  font-size: 1.1rem;
+}
+
+.topCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  grid-column: center-start / center-end;
+  max-width: 15rem;
+}
+/*# sourceMappingURL=main.css.map */
