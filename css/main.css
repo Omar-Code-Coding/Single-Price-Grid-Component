@@ -1,6 +1,65 @@
+@-webkit-keyframes clickHighlight {
+  0% {
+    background-color: #a9c62a;
+  }
+  100% {
+    background-color: #9bb526;
+  }
+}
+
+@keyframes clickHighlight {
+  0% {
+    background-color: #a9c62a;
+  }
+  100% {
+    background-color: #9bb526;
+  }
+}
+
+@media screen and (max-width: 53.125em) {
+  .content {
+    font-size: 1rem;
+  }
+  .topCard {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    padding: 3rem 2.5rem;
+  }
+  .subscription {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    border-radius: 0;
+    padding: 2.7rem;
+  }
+  .subscription__info {
+    margin-bottom: 3rem;
+  }
+  .subscription__btn {
+    padding: 1.6rem;
+  }
+  .description {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1  / span 2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    border-radius: 0 0 .7rem .7rem;
+    padding: 2.7rem;
+  }
+  .description__par {
+    max-width: 65%;
+  }
+}
+
 * {
-  margin: none;
-  padding: none;
+  margin: 0;
+  padding: 0;
 }
 
 *::before,
@@ -23,13 +82,34 @@ body {
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: [margin-start] minmax(5rem, 10vw) [center-start] ([col-start] minmax(15rem, max-content) [col-end])[2] [center-end] minmax(5rem, 10vw) [margin-end];
-      grid-template-columns: [margin-start] minmax(5rem, 10vw) [center-start] repeat(2, [col-start] minmax(15rem, -webkit-max-content) [col-end]) [center-end] minmax(5rem, 10vw) [margin-end];
-      grid-template-columns: [margin-start] minmax(5rem, 10vw) [center-start] repeat(2, [col-start] minmax(15rem, max-content) [col-end]) [center-end] minmax(5rem, 10vw) [margin-end];
+  -ms-grid-columns: [margin-start] minmax(3rem, 8vw) [center-start] minmax(min-content, 1fr) [center-end] minmax(3rem, 8vw) [margin-end];
+      grid-template-columns: [margin-start] minmax(3rem, 8vw) [center-start] minmax(-webkit-min-content, 1fr) [center-end] minmax(3rem, 8vw) [margin-end];
+      grid-template-columns: [margin-start] minmax(3rem, 8vw) [center-start] minmax(min-content, 1fr) [center-end] minmax(3rem, 8vw) [margin-end];
+  justify-items: center;
 }
 
-.attribution {
+.content {
+  display: -ms-grid;
+  display: grid;
+  font-size: 1.6rem;
+  -ms-grid-columns: (minmax(min-content, 43.5rem))[2];
+      grid-template-columns: repeat(2, minmax(-webkit-min-content, 43.5rem));
+      grid-template-columns: repeat(2, minmax(min-content, 43.5rem));
+  grid-column: center-start / center-end;
+  margin: 15vh 0;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
+}
+
+footer {
   font-size: 1.1rem;
+  grid-column: center-start / center-end;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 6;
+  grid-row: 5 / span 6;
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 
 .topCard {
@@ -38,7 +118,194 @@ body {
   display: flex;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
-  grid-column: center-start / center-end;
-  max-width: 15rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  border-radius: .7rem .7rem 0 0;
+  padding: 5rem;
+  padding-right: 5vw;
+  background-color: white;
+}
+
+.topCard__header {
+  color: #2ab2af;
+}
+
+.topCard__subHeader {
+  color: #c0df34;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.topCard__par {
+  font-size: 1.4em;
+  line-height: 1.8;
+  color: #98a6bd;
+}
+
+.subscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  border-radius: 0 0 0 .7rem;
+  padding: 5rem;
+  color: white;
+  background-color: #2ab2af;
+}
+
+.subscription__header {
+  font-size: 1.7em;
+}
+
+.subscription__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2.3rem;
+  color: rgba(229, 239, 245, 0.692);
+  font-size: 1.4375em;
+}
+
+.subscription__info {
+  margin: 1rem 0 4rem 0;
+  color: rgba(229, 239, 245, 0.884);
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+.subscription__btn {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  outline: none;
+  border: none;
+  border-radius: .5rem;
+  padding: 2.2rem;
+  font-size: 1.3125em;
+  color: white;
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  background-color: #c0df34;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  position: relative;
+}
+
+.subscription__btn:hover {
+  -webkit-transform: translateY(-7%);
+          transform: translateY(-7%);
+  background-color: #a9c62a;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+}
+
+.subscription__btn:active {
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  -webkit-animation-name: clickHighlight;
+          animation-name: clickHighlight;
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.price__highlight {
+  margin-right: 1.5rem;
+  color: white;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  border-radius: 0 0 .7rem 0;
+  padding: 5rem;
+  background-color: #4fbfbe;
+}
+
+.description__header {
+  color: white;
+  font-size: 1.7em;
+}
+
+.description__par {
+  margin-top: 2rem;
+  line-height: 1.7;
+  max-width: 75%;
+  color: rgba(229, 239, 245, 0.692);
+  font-size: 1.3em;
+}
+
+@keyframes clickHighlight {
+  0% {
+    background-color: #a9c62a;
+  }
+  100% {
+    background-color: #9bb526;
+  }
+}
+
+@media screen and (max-width: 53.125em) {
+  .content {
+    font-size: 1rem;
+  }
+  .topCard {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    padding: 3rem 2.5rem;
+  }
+  .subscription {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    border-radius: 0;
+    padding: 2.7rem;
+  }
+  .subscription__info {
+    margin-bottom: 3rem;
+  }
+  .subscription__btn {
+    padding: 1.6rem;
+  }
+  .description {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1  / span 2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    border-radius: 0 0 .7rem .7rem;
+    padding: 2.7rem;
+  }
+  .description__par {
+    max-width: 65%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,8 +1,8 @@
 @import 'variables';
 
 * { 
-   margin: none;
-   padding: none;
+   margin: 0;
+   padding: 0;
 }
 
 *::before,
@@ -12,7 +12,7 @@
 
 html {
    box-sizing: border-box;
-   font-size: 62.5%;
+   font-size: 62.5%;   // 1em = 10px
 }
 
 body {
@@ -22,13 +22,27 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: [margin-start] minmax(5rem, 10vw) 
-                           [center-start] repeat(2, [col-start] minmax(15rem, max-content) [col-end])
-                           [center-end] minmax(5rem, 10vw) [margin-end];
+    grid-template-columns: [margin-start] minmax(3rem, 8vw) 
+                           [center-start] minmax(min-content, 1fr) [center-end]
+                            minmax(3rem, 8vw) [margin-end];
+    justify-items: center;
 }
 
-.attribution {
+.content {
+    display: grid;
+    font-size: 1.6rem;
+    grid-template-columns: repeat(2, minmax(min-content, 43.5rem));
+    grid-column: center-start / center-end;
+    margin: 15vh 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.25);
+}
+
+footer {
     font-size: 1.1rem;
+    grid-column: center-start / center-end;
+    grid-row: 5 / span 6;
+    justify-self: start;
 }
 
 

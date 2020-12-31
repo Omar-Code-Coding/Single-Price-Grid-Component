@@ -1,0 +1,60 @@
+$color-primary-1: hsl(179, 62%, 43%); // top header, bottom cards
+$color-primary-2: hsl(71, 73%, 54%);  // top's sub-header, button
+$color-primary-3: hsl(179, 47%, 53%);
+
+$color-neutral-1: hsl(204, 43%, 93%); // page's background color
+$color-neutral-2: hsl(218, 22%, 67%); // paragraphs
+$color-neutral-3: hsla(203, 44%, 93%, 0.692);
+$color-neutral-4: hsla(203, 44%, 93%, 0.884);
+
+/////////////////////////////////////////////////////////////////
+////////////// animation ////////////////////////////////////////
+@keyframes clickHighlight {
+    0% {
+        background-color: hsl(71, 65%, 47%);
+    }
+
+    100% {
+        background-color: hsl(71, 65%, 43%);
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////
+////////////// breakpoint ///////////////////////////////////////
+@media screen and (max-width: 53.125em) {
+    .content {
+        font-size: 1rem;
+    }
+
+    .topCard {
+        grid-row: 1 / 2;
+        padding: 3rem 2.5rem;
+    }
+
+    .subscription {
+        grid-column: 1 / span 2;
+        grid-row: 2 / 3;
+        border-radius: 0;
+        padding: 2.7rem;
+
+        &__info {
+            margin-bottom: 3rem;
+        }
+
+        &__btn {
+            padding: 1.6rem;
+        }
+    }
+
+    .description {
+        grid-column: 1  / span 2;
+        grid-row: 3 / 4;
+        border-radius: 0 0 .7rem .7rem;
+        padding: 2.7rem;
+
+        &__par {
+            max-width: 65%;
+        }
+    }
+}

@@ -1,0 +1,121 @@
+.topCard {
+    display: flex;
+    flex-flow: wrap;
+    grid-column: 1 / span 2;
+
+    border-radius: .7rem .7rem 0 0;
+    padding: 5rem;
+    padding-right: 5vw;
+    background-color: white;
+
+    &__header {
+        color: $color-primary-1;
+    }
+
+    &__subHeader {
+        color: $color-primary-2;
+        margin: 2.5rem 0 1.5rem 0;
+    }
+
+    &__par {
+        font-size: 1.4em;     // 21px
+        line-height: 1.8;
+        color: $color-neutral-2;
+    }
+}
+
+//////////////////////////////////////////////////
+////////////// Subscription's Card ///////////////
+.subscription {
+    display: flex;
+    flex-flow: column wrap;
+    //justify-content: center;
+    grid-column: 1 / 2;
+    border-radius: 0 0 0 .7rem;
+    padding: 5rem;      // 5px
+    color: white;
+    background-color: $color-primary-1;
+
+    &__header {
+        font-size: 1.7em;       // 27.2px
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+
+        margin-top: 2.3rem;
+        color: $color-neutral-3;
+        font-size: 1.4375em;     // 23px
+    }
+
+    &__info {
+        margin: 1rem 0 4rem 0;
+        color: $color-neutral-4;
+        font-weight: 400;
+        font-size: 1.4em;    // 22.4px
+    }
+
+    &__btn {
+        justify-self: center;
+        outline: none;
+        border: none;
+        border-radius: .5rem;
+        padding: 2.2rem;       // 21px
+        font-size: 1.3125em;
+        color: white;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.20);
+        background-color: $color-primary-2;
+        transition: all 200ms;
+        position: relative;
+
+        &:hover {
+            transform: translateY(-7%);
+            background-color: hsl(71, 65%, 47%);
+            box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.30);
+        }
+
+        &:active {
+            transform: translateY(-5%);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.30);
+            animation-name: clickHighlight;
+            animation-duration: 100ms;
+            animation-delay: 0s;
+        }
+    }
+}
+
+.price {
+    &__highlight {
+        margin-right: 1.5rem;
+        color: white;
+        font-size: 2.2em;
+        font-weight: 700;
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////
+////////////// Description's card ///////////////////////////////
+.description {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    grid-column: 2 / 3;
+    border-radius: 0 0 .7rem 0;
+    padding: 5rem;
+    background-color: $color-primary-3;
+
+    &__header {
+        color: white;
+        font-size: 1.7em;    // 28.8px
+    }
+
+    &__par {
+        margin-top: 2rem;
+        line-height: 1.7;
+        max-width: 75%;
+        color: $color-neutral-3;
+        font-size: 1.3em;
+    }
+}
