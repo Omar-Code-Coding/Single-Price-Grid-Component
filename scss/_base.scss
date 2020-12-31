@@ -31,6 +31,7 @@ body {
 .content {
     display: grid;
     font-size: 1.6rem;
+    transform: scale(.7);
     grid-template-columns: repeat(2, minmax(min-content, 43.5rem));
     grid-column: center-start / center-end;
     margin: 15vh 0;

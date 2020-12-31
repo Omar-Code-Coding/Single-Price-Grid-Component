@@ -19,6 +19,8 @@
 @media screen and (max-width: 53.125em) {
   .content {
     font-size: 1rem;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   .topCard {
     -ms-grid-row: 1;
@@ -92,6 +94,8 @@ body {
   display: -ms-grid;
   display: grid;
   font-size: 1.6rem;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   -ms-grid-columns: (minmax(min-content, 43.5rem))[2];
       grid-template-columns: repeat(2, minmax(-webkit-min-content, 43.5rem));
       grid-template-columns: repeat(2, minmax(min-content, 43.5rem));
@@ -271,6 +275,8 @@ footer {
 @media screen and (max-width: 53.125em) {
   .content {
     font-size: 1rem;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   .topCard {
     -ms-grid-row: 1;
