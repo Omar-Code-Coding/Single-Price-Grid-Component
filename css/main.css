@@ -74,6 +74,10 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
+  -webkit-text-size-adjust: auto;
+     -moz-text-size-adjust: auto;
+      -ms-text-size-adjust: auto;
+          text-size-adjust: auto;
 }
 
 body {
